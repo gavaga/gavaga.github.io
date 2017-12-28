@@ -3,7 +3,7 @@ layout: default
 robots: noindex
 ---
 
-<div class="main-post-list">
+<div class="main-page main-page-blog">
 
   <ol class="post-list">
     {% for post in paginator.posts %}
@@ -26,5 +26,51 @@ robots: noindex
   {% if paginator.previous_page or paginator.next_page %}
       {% include pagination.html %}
   {% endif %}
+  
+  {% include footer.html %}
 
 </div>
+
+<div class="main-page main-page-projects">
+	<ul class="project-list">
+		{% for proj in site.projects %}
+		<li class="project-list__item">
+			<div class="project-list__project-card project-card">
+				{% if proj.imageurl %}
+				<div style="background-image: url({{ site.baseurl }}/images/{{ proj.imageurl }})" class="project-list__project-image project-image" alt="image of {{ proj.title }}"> </div>
+				{% endif %}
+
+				<div class="project-list__project-content project-content">
+					<div class="project-list__project-title project-title">
+						<a href="{{ site.baseurl }}{{ proj.url }}" title="{{ proj.title }}">
+							{{ proj.title }}
+						</a>
+					</div>
+
+					{% if proj.brief %}
+					<p class="project-list__project-brief project-brief">
+						{{ proj.brief }}
+					</p>
+					{% endif %}
+				</div>
+			</div>
+		</li>
+		{% endfor %}
+	</ul>
+
+  {% include footer.html %}
+</div>
+
+<!-- All the fixed pages -->
+{% for page in site.pages %}
+<div class="main-page main-page-{{ page.name }}">
+	<h2 class="main-page__title main-page-{{ page.name }}__title">
+		{{ page.title }}
+	</h2>
+	<div class="main-page__content main-page-{{ page.name }}__content">
+		{{ page.content }}
+	</div>
+
+  {% include footer.html %}
+</div>
+{% endfor %}

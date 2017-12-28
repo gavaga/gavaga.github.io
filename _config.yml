@@ -26,11 +26,18 @@ defaults:
       type: 'projects'
     values:
         layout: 'project'
+  -
+    scope:
+      path: ''
+      type: 'pages'
+    values:
+        layout: 'page'
 
 collections:
   projects:
     output: true
     permalink: /:collection/:name
+  pages:
 
 # Build settings
 destination: _site

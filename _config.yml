@@ -1,6 +1,6 @@
 # Site settings
 title: Gavin McDowell
-description: 'Computer Scientist, Student, Dancer, Musician'
+description: 'VR/AR Software Engineer @ Three Space Lab. Augmented dance.'
 url: ""
 baseurl: ""
 # google_analytics: 'UA-XXXXXX-X'
@@ -8,7 +8,7 @@ baseurl: ""
 
 author:
   name: 'Gavin McDowell'
-  email: gmmcdow@gmail.com
+  email: gavin@gavinm.me
   twitter_username: gavdarth
   github_username:  gavaga
   linkedin_username:  gavinmcdowell
